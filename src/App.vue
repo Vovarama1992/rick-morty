@@ -10,6 +10,8 @@ const query = ref('');
 const page = ref(1);
 const count = ref(1);
 const totalPages = ref(1);
+const left = "<";
+const right = ">"
 
 const handleInputChange = (newQuery) => {
       query.value = newQuery;
@@ -41,10 +43,10 @@ const handleInputChange = (newQuery) => {
 <template>
         <div class='searchZone'>
             <div class='horizontal'>
-                <button class='arrow left' @click='moveLeft' :disabled='page < 2'></button>
+                <button class='arrow left' @click='moveLeft' :disabled='page < 2'>{{left}}</button>
                 <Search :initialQuery='query' :initialStatus='status' :onInputChange="handleInputChange"
                       :onStatusChange="handleStatusChange"/>
-                      <button class='arrow right' @click='moveRight' :disabled="page >= totalPages"></button>
+                      <button class='arrow right' @click='moveRight' :disabled="page >= totalPages">{{right}}</button>
             </div>
             <button @click="startCount" class='button'>Применить</button>
         </div>
@@ -59,6 +61,7 @@ const handleInputChange = (newQuery) => {
     flex-direction: row;
 }
 .arrow {
+    
     width: 20px;
     height: 20px;
     background-size: contain; 
@@ -68,10 +71,10 @@ const handleInputChange = (newQuery) => {
     
 }
 .left {
-    background-image: url('src/components/icons/left.png');
+   
 }
 .right {
-    background-image: url('src/components/icons/right.png');
+   
 }
 .inputWrapper {
     display: flex;
