@@ -4,7 +4,10 @@
 
 export default {
   props: {
-    
+    query: String,
+    status: String,
+    onInputChange: Function,
+    onStatusChange: Function
   },
  
    setup(props: {
@@ -15,12 +18,14 @@ export default {
 }) {
     const handleInputChange = (e: Event) => {
       const target = e.target as HTMLInputElement;
-      props.onInputChange(target.value);
+      const value = target.value as string;
+      props.onInputChange(value);
     };
 
     const handleStatusChange = (e: Event) => {
       const target = e.target as HTMLSelectElement;
-      props.onStatusChange(target.value);
+      const value = target.value as string;
+      props.onStatusChange(value);
     };
 
     return {

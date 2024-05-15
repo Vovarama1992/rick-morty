@@ -18,7 +18,7 @@ const handleInputChange = (newQuery) => {
 
     const handleStatusChange = (newStatus) => {
       status.value = newStatus;
-      console.log("query: " + query.value + " status " + status.value);
+     
     };
     async function startCount() {
            totalPages.value = await counter(query.value, status.value);
