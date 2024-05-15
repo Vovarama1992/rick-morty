@@ -10,8 +10,8 @@ export default {
    setup(props: {
   query: string;
   status: string;
-  onInputChange: (value: string) => void;
-  onStatusChange: (value: string) => void;
+  onInputChange: Function;
+  onStatusChange: Function;
 }) {
     const handleInputChange = (e: Event) => {
       const target = e.target as HTMLInputElement;
