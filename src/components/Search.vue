@@ -10,21 +10,16 @@ export default {
     onStatusChange: Function
   },
  
-   setup(props: {
-  query: string;
-  status: string;
-  onInputChange: Function;
-  onStatusChange: Function;
-}) {
-    const handleInputChange = (e: Event) => {
-      const target = e.target as HTMLInputElement;
-      const value = target.value as string;
+   setup(props: any) {
+    const handleInputChange = (e: any) => {
+      const target = e.target;
+      const value = target.value;
       props.onInputChange(value);
     };
 
-    const handleStatusChange = (e: Event) => {
-      const target = e.target as HTMLSelectElement;
-      const value = target.value as string;
+    const handleStatusChange = (e: any) => {
+      const target = e.target;
+      const value = target.value;
       props.onStatusChange(value);
     };
 
