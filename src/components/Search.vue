@@ -4,10 +4,7 @@
 
 export default {
   props: {
-    query: String,
-    status: String,
-    onInputChange: Function,
-    onStatusChange: Function
+    
   },
  
    setup(props: {
